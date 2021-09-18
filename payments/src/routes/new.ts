@@ -23,8 +23,7 @@ router.post('/api/payments',
   validateRequest,
 async (req: Request, res: Response) => {
 
-  const { orderId, token } = req.body;
-  console.log(token, orderId);
+  const { token, orderId } = req.body;
 
   const order = await Order.findById(orderId);
 
@@ -50,7 +49,6 @@ async (req: Request, res: Response) => {
     orderId,
     stripeId: charge.id,
   });
-  console.log(payment);
   await payment.save();
 
   new PaymentCreatedPublisher(natsWrapper.client).publish({
