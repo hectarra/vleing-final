@@ -17,8 +17,7 @@ const NewProduct = () => {
   });
 
   const onSubmit = (event) => {
-    event.preventDefault();
-    doRequest();
+
   }
 
   const onBlur = () => {
