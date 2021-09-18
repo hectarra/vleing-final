@@ -23,7 +23,10 @@ const ProductShow = ({product}) => {
 }
 
 ProductShow.getInitialProps = async (context, client) => {
+   const {productId} = context.query;
+   const {data} = await client.get(`/api/products/${productId}`);
 
+  return { product: data};
 }
 
 export default ProductShow;
