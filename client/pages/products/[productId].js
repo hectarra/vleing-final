@@ -9,7 +9,7 @@ const ProductShow = ({product}) => {
     body: {
       productId: product.id
     },
-    onSuccess: (order) => Router.push('/orders/[orderId]', `/orders/${orderId}`),
+    onSuccess: (order) => Router.push('/orders/[orderId]', `/orders/${order.id}`),
   })
 
   return (
