@@ -1,4 +1,5 @@
 name: deploy-manifests
+
 on:
   push:
     branches:
