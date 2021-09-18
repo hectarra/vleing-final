@@ -31,7 +31,19 @@ const NewProduct = () => {
 
   return (
     <div>
- 
+      <h1>Create a new product</h1>
+      <form onSubmit={onSubmit}>
+        <div className="form-group">
+          <label>Title</label>
+          <input value={title} onChange={(e) => setTitle(e.target.value)} className="form-control"/>
+        </div>
+        <div className="form-group">
+          <label>Price</label>
+          <input value={price} onBlur={onBlur} onChange={(e) => setPrice(e.target.value)} className="form-control"/>
+        </div>
+        {errors}
+        <button className="btn btn-primary">Submit</button>
+      </form>
     </div>
   );
 };
