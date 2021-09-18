@@ -1,6 +1,3 @@
-import Link from 'next/link'
-import buildClient from '../api/build-client'
-
 const OrderIndex = ({orders}) => {
 
   const ordersList = orders.map(product => {
