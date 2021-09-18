@@ -10,10 +10,16 @@ const NewProduct = () => {
     url: '/api/products',
     method: 'post',
     body: {
-      title, price
+      title, 
+      price,
     },
     onSuccess: () => Router.push('/'),
-  })
+  });
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    doRequest();
+  }
 
   const onBlur = () => {
     const value = parseFloat(price);
@@ -21,11 +27,6 @@ const NewProduct = () => {
       return;
     }
     setPrice(value.toFixed(2));
-  }
-
-  const onSubmit = (event) => {
-    event.preventDefault();
-    doRequest();
   }
 
   return (

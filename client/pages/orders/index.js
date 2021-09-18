@@ -1,6 +1,6 @@
 const OrderIndex = ({orders}) => {
 
-  const ordersList = orders.map(product => {
+  const ordersList = orders.map(order => {
     return (
       <tr key={order.id}>
         <td>{order.product.title}</td>
