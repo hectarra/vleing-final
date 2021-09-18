@@ -12,12 +12,12 @@ const NewProduct = () => {
     body: {
       title, price
     },
-    onSuccess: (product) => Router.push('/'),
+    onSuccess: () => Router.push('/'),
   })
 
   const onBlur = () => {
     const value = parseFloat(price);
-    if(isNaN()) {
+    if(isNaN(value)) {
       return;
     }
     setPrice(value.toFixed(2));
