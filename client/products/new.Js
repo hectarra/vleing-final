@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Router from 'next/router';
-import useRequest from "../../hooks/use-request";
+import useRequest from "../hooks/use-request";
 
-const NewProduct = () => {
+export default () => {
 
   const [title, setTitle] = useState('');
   const [price, setPrice] = useState('');
@@ -47,5 +47,3 @@ const NewProduct = () => {
     </div>
   );
 };
-
-export default NewProduct;
