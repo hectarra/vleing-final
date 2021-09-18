@@ -1,4 +1,4 @@
-import Router from "next/dist/next-server/server/router";
+import Router from "next/router";
 import useRequest from "../../hooks/use-request";
 
 const ProductShow = ({product}) => {
