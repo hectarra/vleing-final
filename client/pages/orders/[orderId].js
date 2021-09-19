@@ -40,7 +40,8 @@ const OrderShow = ({order, currentUser}) => {
         token={({id}) => doRequest({token: id})}
         stripeKey="pk_test_51JaRqYInLbyH7ZPEzZYkevc7PFhwtunPXa0WiiWnR4lz3YjsSt9JlmBwtSNWDGaf4zn3EE5NY1qL9m2Tsl2JWGFH00LN05M25C"
         amount={order.product.price * 100}
-        email={currentUser.email}/>
+        email={currentUser.email}
+        currency="EUR"/>
       {errors}
     </div>
   );
