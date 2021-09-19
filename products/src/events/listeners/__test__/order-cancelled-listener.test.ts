@@ -37,7 +37,7 @@ const setup = async () => {
 
 }
 
-it('updates the ticket', async () => {
+it('updates the product', async () => {
   const { listener, product, data, msg } = await setup()
   await listener.onMessage(data, msg);
 

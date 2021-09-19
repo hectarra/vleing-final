@@ -80,7 +80,7 @@ it('returns a 400 if the provided id does not exist', async () => {
       .expect(400);
 });
 
-it('updates the ticket provided valid inputs', async () => {
+it('updates the product provided valid inputs', async () => {
   const cookie = global.signin();
   
   const response = await request(app)
