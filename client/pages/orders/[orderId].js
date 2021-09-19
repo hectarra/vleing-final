@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import StripeCheckout from 'react-stripe-checkout';
 import useRequest from "../../hooks/use-request";
 import Router from "next/router";
 
@@ -35,6 +36,7 @@ const OrderShow = ({order, currentUser}) => {
   return (
     <div>
       Time left to pay: {timeLeft} seconds
+      {errors}
     </div>
   );
 }
