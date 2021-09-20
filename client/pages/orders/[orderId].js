@@ -18,16 +18,15 @@ const OrderShow = ({order, currentUser}) => {
   useEffect(() => {
     const findTimeLeft = () => {
       const msLeft = new Date(order.expiresAt) - new Date();
+      console.log(msLeft);
       setTimeLeft(Math.round(msLeft /1000));
     };
 
     findTimeLeft();
     const timerId = setInterval(findTimeLeft, 1000);
-    console.log(timeLeft);
 
 
     if(timeLeft < 0) {
-      console.log(timeLeft);
       return <div>Order Expired</div>;
     }
 
@@ -39,7 +38,6 @@ const OrderShow = ({order, currentUser}) => {
   return (
     <div>
       Time left to pay: {timeLeft} seconds
-      </br>
       <StripeCheckout
         token={({id}) => doRequest({token: id})}
         stripeKey="pk_test_51JaRqYInLbyH7ZPEzZYkevc7PFhwtunPXa0WiiWnR4lz3YjsSt9JlmBwtSNWDGaf4zn3EE5NY1qL9m2Tsl2JWGFH00LN05M25C"
