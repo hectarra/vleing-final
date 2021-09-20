@@ -35,8 +35,8 @@ async (req: Request, res: Response) => {
     throw new NotAuthorizedError();
   }
 
-  if(order.status === OrderStatus.Cancelled) {
-    throw new BadRequestError('Cannot pay for a cancelled order');
+  if(order.status === OrderStatus.Cancelled || order.status === OrderStatus.Complete) {
+    throw new BadRequestError('Cannot pay for a finished order');
   }
 
   const charge = await stripe.charges.create({
