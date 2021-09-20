@@ -57,6 +57,9 @@ async (req: Request, res: Response) => {
     stripeId: payment.stripeId
   })
 
+  order.status = OrderStatus.Complete;
+  await order.save();
+
   res.status(201).send({ id: payment.id });
 });
 
