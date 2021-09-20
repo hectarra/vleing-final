@@ -18,22 +18,20 @@ const OrderShow = ({order, currentUser}) => {
   useEffect(() => {
     const findTimeLeft = () => {
       const msLeft = new Date(order.expiresAt) - new Date();
-      console.log(msLeft);
       setTimeLeft(Math.round(msLeft /1000));
     };
 
     findTimeLeft();
     const timerId = setInterval(findTimeLeft, 1000);
 
-
-    if(timeLeft < 0) {
-      return <div>Order Expired</div>;
-    }
-
     return () => {
       clearInterval(timerId);
     };
   }, [order]);
+
+  if(timeLeft < 0) {
+    return <div>Order Expired</div>;
+  }
 
   return (
     <div>
